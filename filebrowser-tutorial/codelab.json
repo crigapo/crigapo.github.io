@@ -3,19 +3,19 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2019-10-15T17:38:47Z",
+  "updated": "2019-10-15T17:43:03Z",
   "id": "filebrowser-tutorial",
   "duration": 0,
   "title": "",
-  "authors": "Pete LePage",
-  "summary": "In this codelab, you'll build an installable, Progressive Web App, which loads quickly, even on flaky networks, and when launched looks like any other installed app.",
+  "authors": "Mario, Raúl, Manel, Sergio, Cristian",
+  "summary": "TUTORIAL FILEBROWSER",
   "source": "1N7IBC-pij7UrRpNJI9gWQVL5f7m1YLzSATJbNIywnJU",
-  "theme": "web",
+  "theme": "gestor-de-archivos",
   "status": [
     "published"
   ],
   "category": [
-    "Web"
+    "gestor de archivos"
   ],
   "tags": [
     "cds17",
