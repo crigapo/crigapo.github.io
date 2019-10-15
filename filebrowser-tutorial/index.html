@@ -50,9 +50,12 @@
       </google-codelab-step>
     
       <google-codelab-step label="Paso 4" duration="0">
-        <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) por lo tanto, pondremos el comando &#34;curl (opciones deseadas, la URL </p>
-<p>Ponienod el comando curl seguido de la URL del programa desa</p>
+        <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) por lo tanto, pondremos el comando <strong><em>&#34;curl&#34;</em></strong> (opciones deseadas, la URL. Poniendo el comando curl, seguido de la URL del programa deseado. En este caso <strong><em>Filebrowser</em></strong>, procedemos a instalar el programa deseado. Si se le añade el pipe al final de la línea de comando se instalará sin mostrar la información de la descarga.)</p>
 <pre><code>curl -fsSL https://filebrowser.xyz/get.sh | bash</code></pre>
+<pre><code>filebrowser config set -a 192.168.10.175</code></pre>
+<aside class="warning"><p>No olvides sustituir la IP, por la IP de tu contenedor</p>
+</aside>
+<p>filebrowser -r /home/ubuntu &amp;</p>
 
 
       </google-codelab-step>
