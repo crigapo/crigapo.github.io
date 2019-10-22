@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2019-10-15T18:02:58Z",
+  "updated": "2019-10-22T17:30:48Z",
   "id": "filebrowser-tutorial",
   "duration": 0,
   "title": "",
@@ -34,6 +34,6 @@
     "typtwd17",
     "web"
   ],
-  "feedback": "https://github.com/googlecodelabs/your-first-pwapp/issues",
+  "feedback": "https://github.com/crigapo/crigapo.github.io",
   "url": "filebrowser-tutorial"
 }
