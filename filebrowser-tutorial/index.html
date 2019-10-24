@@ -31,6 +31,7 @@
         <p>Primero tienes que crear un contenedor con lxc, para eso tienes que poner el comando, </p>
 <p>lxc launch (<em>el software deseado, en este caso ubuntu</em>) : (<em>La versión deseada</em>) nombre del contenedor:</p>
 <pre><code>lxc launch ubuntu:18.04 micontenedor</code></pre>
+<p class="image-container"><img style="width: 534.00px" src="img/c75399448bbbbb8f.png"></p>
 <p>Despues ejecutas tu contenedor:</p>
 <pre>lxc exec micontenedor bash</pre>
 
@@ -40,18 +41,20 @@
       <google-codelab-step label="Descargar y configurar tu servidor Filebrowser." duration="0">
         <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) por lo tanto, pondremos el comando <strong><em>&#34;curl&#34;</em></strong> (opciones deseadas, la URL. Poniendo el comando curl, seguido de la URL del programa deseado. En este caso <strong><em>Filebrowser</em></strong>, procedemos a instalar el programa deseado. Si se le añade el pipe al final de la línea de comando se instalará sin mostrar la información de la descarga.):</p>
 <pre>curl -fsSL https://filebrowser.xyz/get.sh | bash</pre>
-<pre>filebrowser config set -a 192.168.10.175</pre>
+<pre>filebrowser config set -a 192.168.10.141</pre>
 <aside class="warning"><p>No olvides sustituir la IP, por la IP de tu contenedor si no la sabes pon &#34;ip a&#34;</p>
 </aside>
+<p class="image-container"><img style="width: 602.00px" src="img/7fc86082dbcb156c.png"><img style="width: 340.50px" src="img/f2f1c3583e23627.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Crear una cuenta de Filebrowser." duration="0">
         <p>Creas una cuenta de Filebrowser:</p>
-<pre>filebrowser user add micontenedor 12345</pre>
+<pre>filebrowser users add micontenedor 12345</pre>
 <aside class="warning"><p>Cambia el nombre de usuario y contraseña a tu gusto</p>
 </aside>
+<p class="image-container"><img style="width: 668.40px" src="img/f9b86ae626a4099a.png"></p>
 
 
       </google-codelab-step>
@@ -61,14 +64,15 @@
 <pre>filebrowser -r /home/ubuntu &amp;</pre>
 <aside class="warning"><p> ( /home/ubuntu ) es donde está situado mi directorio filebrowser</p>
 </aside>
+<p class="image-container"><img style="width: 579.00px" src="img/fc8979243a779199.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Como entrar en Filebrowser." duration="0">
         <p>Una vez instalado el filebrowser, nos conectaremos a nuestro servidor filebrowser a través de un cliente en la misma red, para poder acceder tenemos que poner en el buscador nuestra IP seguido de el puerto que utiliza filebrowser (8080)</p>
-<p class="image-container"><img style="width: 472.00px" src="img/b11ef02b4fd5fbb7.png"></p>
-<aside class="warning"><p> Tienes que cambiar la IP (192.168.10.175) a la tuya si no la sabes puedes poner &#34;ip a&#34; en el terminal.</p>
+<p class="image-container"><img style="width: 511.00px" src="img/127fd3cef0e8c42e.png"></p>
+<aside class="warning"><p> Tienes que cambiar la IP (192.168.10.141) a la tuya si no la sabes puedes poner &#34;ip a&#34; en el terminal.</p>
 </aside>
 
 
