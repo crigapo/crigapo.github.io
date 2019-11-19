@@ -59,13 +59,11 @@
       </google-codelab-step>
     
       <google-codelab-step label="Descargar y configurar tu servidor Filebrowser" duration="0">
-        <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) poniendo el comando <strong><em>&#34;curl&#34;</em></strong> (opciones deseadas, la URL. Poniendo el comando curl seguido de la URL del programa deseado, en este caso <strong><em>Filebrowser</em></strong>. Eprocedemos a instalar el programa deseado. Si se le añade el pipe al final de la línea de comando se instalará sin mostrar la información de la descarga.):</p>
-<pre>curl -fsSL https://filebrowser.xyz/get.sh | bash</pre>
+        <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) poniendo el comando <strong><em>&#34;curl&#34;</em></strong> (opciones deseadas, la URL. Poniendo el comando curl seguido de la URL del programa deseado, en este caso <strong><em>Filebrowser</em></strong>. El primer paso de la instalación es instalar el programa deseas, en este caso añadiremos el pipe (|) para que no muestre la información de la descarga de forma que solo mostrara el resultado final. Añadir pipe (|) al final no afecta a la descarga, únicamente oculta la información de cómo funciona la descarga de forma que visualmente queda más ordenado.</p>
+<pre>curl https://filebrowser.xyz/get.sh | bash</pre>
 <p class="image-container"><img style="width: 602.00px" src="img/7fc86082dbcb156c.png"></p>
-<aside class="special"><p><code>-fsSL </code></p>
-</aside>
 <pre>filebrowser config set -a 192.168.10.141</pre>
-<p>El comando filebrowser config set -a 192.168.10.141 sirve para hacer que el host sea una ip especificada.</p>
+<p>El comando filebrowser <strong>config set -a 192.168.10.141</strong> sirve para hacer que el host sea una ip especificada.</p>
 <aside class="warning"><p><code>No olvides sustituir la IP por la IP de tu equipo si no la sabes pon el comando &#34;ip a&#34;</code></p>
 </aside>
 <pre><code>Sign up:              false
@@ -144,7 +142,7 @@ Auther configuration (raw):
         <p>Ejecutas el siguiente paso para que el servidor esté activo y le añadimos el &amp; para poder seguir haciendo mas cosas:</p>
 <p>Explicar que debe crear una carpeta donde se guardaran los ficheros y carpetas (que no sea /home/ubuntu )</p>
 <pre>filebrowser -r /home/ubuntu &amp;</pre>
-<aside class="special"><p><code>con esto &amp; puedes hacer dos cosas a la vez</code></p>
+<aside class="special"><p><code>con &amp; puedes hacer dos cosas a la vez</code></p>
 </aside>
 <aside class="warning"><p><code>No se debe ejecutar en modo root porque si no daba permiso y acceso a todos los archivos de file browser</code></p>
 </aside>
