@@ -27,13 +27,31 @@
                   environment="web"
                   feedback-link="https://github.com/crigapo/crigapo.github.io">
     
+      <google-codelab-step label="Filebrowser" duration="0">
+        <p class="image-container"><img style="width: 602.00px" src="img/6e3beb6649a2ab28.png"></p>
+<p>File Browser es un administrador de archivos, gestor de archivos o buscador de archivos, que te permite guardar, ejecutar, copiar, pegar, buscar y borrar archivos. También te permite descomprimir y comprimir los archivos e incluso cambiar permisos. </p>
+<p><a href="https://github.com/filebrowser/filebrowser" target="_blank"><paper-button class="colored" raised>FileBrowser GitHub page</paper-button></a> </p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Lanzar el contenedor." duration="0">
         <p>Primero tienes que crear un contenedor con lxc, para eso tienes que poner el comando, </p>
-<p>lxc launch (<em>el software deseado, en este caso ubuntu</em>) : (<em>La versión deseada</em>) nombre del contenedor:</p>
+<p><code>lxc launch </code><em><code>SISTEMA_OPERATIVO</code></em><code>:</code><em><code>VERSION NOMBRE_DEL_CONTENEDOR</code></em></p>
 <pre><code>lxc launch ubuntu:18.04 micontenedor</code></pre>
 <p class="image-container"><img style="width: 534.00px" src="img/c75399448bbbbb8f.png"></p>
+<aside class="special"><p>Comprueba que se ha creado el contenedor ejecutando el comando:</p>
+<p><code>lxc list</code></p>
+<p>Debe aparecer una linea similar a esta..</p>
+<p class="image-container"><img style="width: 579.50px" src="img/6201ee117c1c1a9f.png"></p>
+<p>?????? si no esta <code>RUNNING</code>, ejecuta el siguiente comando para iniciarlo</p>
+<p><code>lxc start micontenedor</code></p>
+</aside>
 <p>Despues ejecutas tu contenedor:</p>
 <pre>lxc exec micontenedor bash</pre>
+<p>Si al ejecutar el anterior comando no te funciona, prueba a poner este:</p>
+<pre>lxc start micontenedor bash</pre>
+<p class="image-container"><img style="width: 459.00px" src="img/c78f0d0f88aa42c3.png"></p>
 
 
       </google-codelab-step>
@@ -41,28 +59,94 @@
       <google-codelab-step label="Descargar y configurar tu servidor Filebrowser." duration="0">
         <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) por lo tanto, pondremos el comando <strong><em>&#34;curl&#34;</em></strong> (opciones deseadas, la URL. Poniendo el comando curl, seguido de la URL del programa deseado. En este caso <strong><em>Filebrowser</em></strong>, procedemos a instalar el programa deseado. Si se le añade el pipe al final de la línea de comando se instalará sin mostrar la información de la descarga.):</p>
 <pre>curl -fsSL https://filebrowser.xyz/get.sh | bash</pre>
-<pre>filebrowser config set -a 192.168.10.141</pre>
-<aside class="warning"><p>No olvides sustituir la IP, por la IP de tu contenedor si no la sabes pon &#34;ip a&#34;</p>
+<p class="image-container"><img style="width: 602.00px" src="img/7fc86082dbcb156c.png"></p>
+<aside class="special"><p><code>-fsSL </code></p>
 </aside>
-<p class="image-container"><img style="width: 602.00px" src="img/7fc86082dbcb156c.png"><img style="width: 340.50px" src="img/f2f1c3583e23627.png"></p>
+<pre>filebrowser config set -a 192.168.10.141</pre>
+<p>El comando filebrowser config set -a 192.168.10.141 sirve para hacer que el host sea una ip especificada.</p>
+<aside class="warning"><p><code>No olvides sustituir la IP por la IP de tu equipo si no la sabes pon el comando &#34;ip a&#34;</code></p>
+</aside>
+<pre><code>Sign up:              false
+Create User Dir:  false
+Auth method:          json
+Shell:                  
+
+Branding:
+  Name:                        
+  Files override:              
+  Disable external links:  false
+
+Server:
+  Log:           stdout
+  Port:          8080
+  Base URL:  
+  Root:          /home/ubuntu
+  Socket:    
+  Address:   127.0.0.1
+  TLS Cert:  
+  TLS Key:   
+
+Defaults:
+  Scope:          .
+  Locale:         en
+  View mode:  mosaic
+  Commands:   
+  Sorting:
+        By:   
+        Asc:  false
+  Permissions:
+        Admin:         false
+        Execute:   true
+        Create:        true
+        Rename:        true
+        Modify:        true
+        Delete:        true
+        Share:         true
+        Download:  true
+
+Auther configuration (raw):
+
+{
+  &#34;recaptcha&#34;: null
+}</code></pre>
+<aside class="special"><p><code>Sign up → </code></p>
+<p><code>log → </code></p>
+<p><code>port → </code></p>
+<p><code>Root → El directorio donde se guardaran los archivos que guardan los clientes</code></p>
+<p><code>Address → </code></p>
+<p><code>Admin → </code></p>
+<p><code>Execute →</code><strong><code> </code></strong><code>Te permite ejecutar Filebrowser</code></p>
+<p><code>Create → Te permite crear archivos en Filebrowser</code></p>
+<p><code>Rename → Puedes cambiar el nombre del archivo</code></p>
+<p><code>Modify → Te permite modificar los archivos de Filebrowser</code></p>
+<p><code>Delete → Te permite borrar los archivos de Filebrowser</code></p>
+<p><code>Share → Te permite compartir archivos a otras personas</code></p>
+<p><code>Download →  Te deja descargar los archivos de File Browser</code></p>
+<p><code>Recaptcha → Si quieres que al iniciar sesion tengas que identificarte como que no eres un robot</code></p>
+</aside>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Crear una cuenta de Filebrowser." duration="0">
-        <p>Creas una cuenta de Filebrowser:</p>
+        <p>Creas una cuenta de Filebrowser, Donde <em>micontenedor </em>es el nombre de usuario y <em>12345 </em>es la contraseña</p>
 <pre>filebrowser users add micontenedor 12345</pre>
-<aside class="warning"><p>Cambia el nombre de usuario y contraseña a tu gusto</p>
+<aside class="warning"><p><code>Cambia el nombre de usuario y contraseña a tu gusto</code></p>
 </aside>
-<p class="image-container"><img style="width: 668.40px" src="img/f9b86ae626a4099a.png"></p>
+<p class="image-container"><img style="width: 668.00px" src="img/f9b86ae626a4099a.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Poner el servidor Filebrowser en funcionamiento." duration="0">
-        <p>Ejecutas el siguiente paso para que el servidor este activo y le añadimos el &amp; para poder seguir haciendo mas cosas:</p>
+        <p>Ejecutas el siguiente paso para que el servidor esté activo y le añadimos el &amp; para poder seguir haciendo mas cosas:</p>
+<p>Explicar que debe crear una carpeta donde se guardaran los ficheros y carpetas (que no sea /home/ubuntu )</p>
 <pre>filebrowser -r /home/ubuntu &amp;</pre>
-<aside class="warning"><p> ( /home/ubuntu ) es donde está situado mi directorio filebrowser</p>
+<aside class="special"><p><code>con esto &amp; puedes hacer dos cosas a la vez</code></p>
+</aside>
+<aside class="warning"><p><code>No se debe ejecutar en modo root porque si no daba permiso y acceso a todos los archivos de file browser</code></p>
+</aside>
+<aside class="warning"><p><code> ( /home/ubuntu ) es donde están situados los ficheros y archivos guardados de filebrowser</code></p>
 </aside>
 <p class="image-container"><img style="width: 579.00px" src="img/fc8979243a779199.png"></p>
 
@@ -70,9 +154,9 @@
       </google-codelab-step>
     
       <google-codelab-step label="Como entrar en Filebrowser." duration="0">
-        <p>Una vez instalado el filebrowser, nos conectaremos a nuestro servidor filebrowser a través de un cliente en la misma red, para poder acceder tenemos que poner en el buscador nuestra IP seguido de el puerto que utiliza filebrowser (8080)</p>
+        <p>Una vez instalado el filebrowser, nos conectaremos a nuestro servidor filebrowser a través de un cliente en la misma red, para poder acceder tenemos que poner en el buscador nuestra IP seguido de el puerto que utiliza filebrowser (8080).</p>
 <p class="image-container"><img style="width: 511.00px" src="img/127fd3cef0e8c42e.png"></p>
-<aside class="warning"><p> Tienes que cambiar la IP (192.168.10.141) a la tuya si no la sabes puedes poner &#34;ip a&#34; en el terminal.</p>
+<aside class="warning"><p><code> Tienes que cambiar la IP (192.168.10.141) a la tuya si no la sabes puedes poner &#34;ip a&#34; en el terminal.</code></p>
 </aside>
 
 
