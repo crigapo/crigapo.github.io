@@ -29,35 +29,37 @@
     
       <google-codelab-step label="Filebrowser" duration="0">
         <p class="image-container"><img style="width: 602.00px" src="img/6e3beb6649a2ab28.png"></p>
-<p>File Browser es un administrador de archivos, gestor de archivos o buscador de archivos, que te permite guardar, ejecutar, copiar, pegar, buscar y borrar archivos. También te permite descomprimir y comprimir los archivos e incluso cambiar permisos. </p>
+<p>File Browser es un administrador de archivos que permite a los usuarios buscar archivos y gestionarlos. Permite guardar, ejecutar, copiar/pegar, buscar y borrar archivos, entre otras cosas permite descomprimir/comprimir archivos o administrar sus permisos. </p>
 <p><a href="https://github.com/filebrowser/filebrowser" target="_blank"><paper-button class="colored" raised>FileBrowser GitHub page</paper-button></a> </p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Lanzar el contenedor." duration="0">
-        <p>Primero tienes que crear un contenedor con lxc, para eso tienes que poner el comando, </p>
+      <google-codelab-step label="Lanzar el contenedor" duration="0">
+        <p>Primero se debe crear un contenedor con lxc, para eso hay que poner el comando, </p>
 <p><code>lxc launch </code><em><code>SISTEMA_OPERATIVO</code></em><code>:</code><em><code>VERSION NOMBRE_DEL_CONTENEDOR</code></em></p>
 <pre><code>lxc launch ubuntu:18.04 micontenedor</code></pre>
 <p class="image-container"><img style="width: 534.00px" src="img/c75399448bbbbb8f.png"></p>
 <aside class="special"><p>Comprueba que se ha creado el contenedor ejecutando el comando:</p>
 <p><code>lxc list</code></p>
-<p>Debe aparecer una linea similar a esta..</p>
+<p>Debe aparecer una línea similar a esta.</p>
 <p class="image-container"><img style="width: 579.50px" src="img/6201ee117c1c1a9f.png"></p>
-<p>?????? si no esta <code>RUNNING</code>, ejecuta el siguiente comando para iniciarlo</p>
+<p>?????? si no está <code>RUNNING</code>, ejecuta el siguiente comando para iniciarlo</p>
 <p><code>lxc start micontenedor</code></p>
 </aside>
-<p>Despues ejecutas tu contenedor:</p>
+<p>Despues ejecuta tu contenedor:</p>
 <pre>lxc exec micontenedor bash</pre>
-<p>Si al ejecutar el anterior comando no te funciona, prueba a poner este:</p>
+<p>Si al ejecutar el anterior comando te sale el siguiente mensaje:<img style="width: 442.00px" src="img/18451b21c457e8d.png"></p>
+<p>Prueba a poner este para iniciar el contenedor:</p>
 <pre>lxc start micontenedor bash</pre>
+<p>Una vez usado este comando debería funcionar con normalidad y aparecer de la siguiente manera:</p>
 <p class="image-container"><img style="width: 459.00px" src="img/c78f0d0f88aa42c3.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Descargar y configurar tu servidor Filebrowser." duration="0">
-        <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) por lo tanto, pondremos el comando <strong><em>&#34;curl&#34;</em></strong> (opciones deseadas, la URL. Poniendo el comando curl, seguido de la URL del programa deseado. En este caso <strong><em>Filebrowser</em></strong>, procedemos a instalar el programa deseado. Si se le añade el pipe al final de la línea de comando se instalará sin mostrar la información de la descarga.):</p>
+      <google-codelab-step label="Descargar y configurar tu servidor Filebrowser" duration="0">
+        <p>Instalamos Filebrowser con el programa de &#34;<strong><em>curl</em></strong>&#34; (client URL) poniendo el comando <strong><em>&#34;curl&#34;</em></strong> (opciones deseadas, la URL. Poniendo el comando curl seguido de la URL del programa deseado, en este caso <strong><em>Filebrowser</em></strong>. Eprocedemos a instalar el programa deseado. Si se le añade el pipe al final de la línea de comando se instalará sin mostrar la información de la descarga.):</p>
 <pre>curl -fsSL https://filebrowser.xyz/get.sh | bash</pre>
 <p class="image-container"><img style="width: 602.00px" src="img/7fc86082dbcb156c.png"></p>
 <aside class="special"><p><code>-fsSL </code></p>
